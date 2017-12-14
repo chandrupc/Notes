@@ -1,0 +1,86 @@
+            java.lang.Exception is a base class for all 
+exception was created and the new one which 
+is going to create
+
+keywords:
+--------
+    1. try
+    2. catch
+    3. throws
+    4. throw
+    5. finally
+
+
+java.lang - System defined Exception
+java.io - IO Related Exception
+java.sql - DB Exception
+
+System defined
+User defined
+
+Some Build in packges in java.lang
+----------------------------------
+ArithemticException
+ArrayIndexOutOfBoundsException
+ArrayStoreException
+ClassNotFoundException
+ClassCastException
+CloneNotSupportedException
+EnumConstantNotPresentException
+Exception
+IllegalAccessException
+IllegalArgumentException
+IllegalMonitorStateException
+IllegalStateException
+IllegalThreadStateException
+IndexOutOfBoundsException
+InstantiationException
+InterruptedException
+NegativeArraySizeException
+NoSuchFieldException
+NoSuchMethodException
+NullPointerExeption
+NumberFormatException
+RuntimeException
+SecurityException
+StringIndexOutOfBoundsException
+TypeNotFoundException
+UnsupportedOperationException
+
+User Defined Exception
+----------------------
+public class <ExceptionName>Exception extends Exception {
+    // Call Super class constructor
+}
+
+
+try...catch and finally:
+------------------------
+try {
+    // Critical Section code here
+} catch(ExceptionName e) {
+    // handle exception here
+} [ catch(ExceptionName e) {
+    // handle exception here
+}, catch(ExceptionName e) {
+    // handle exception here
+}, catch(ExceptionName e) {
+    // handle exception here
+}, catch(ExceptionName e) {
+    // handle exception here
+},....catch(ExceptionName e) {
+    // handle exception here
+} ] [ finally {
+    // close your connection, file
+} ]
+
+throws:
+-------
+    add at end of method defined. like,
+        throws ExceptionName1, EXceptionName2, ........
+
+throw:
+------
+    to create an exception
+
+    throw new ExceptionName(message);                    

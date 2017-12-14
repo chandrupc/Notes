@@ -1,0 +1,61 @@
+            java.sql
+
+SQLException
+
+load db driver                  Class.forName(String path) throws ClassNotFoundException
+Create connection               Connection connection = DriverManager.getConnection(String url, String username, String password);
+create statement                Statement statement = connection.createStatement();
+execute query                   boolean execute(String query), int executeUpdate(String query), ResultSet executeQuery(String query)
+close statement, connection     statement.close(), connection.close()
+
+configure build path -> add external jar
+
+oracle.jdbc.driver.OracleDriver
+
+jdbc:oracle:thin:@localhost:1521:orcl
+
+create table student_tbl(roll_number varchar2(10), name varchar2(50))
+
+
+com.mysql.jdbc.Driver
+
+jdbc:mysql://localhost:3306/<db>
+
+
+
+public CallableStatement prepareCall("{call procedurename(?,?...?)}");  
+
+registerOutParameter(int index,Types.<*>);
+
+create or replace procedure item_add
+(i_id IN NUMBER, i_name IN VARCHAR2)
+as
+begin
+insert into item_info values(i_id, i_name);
+commit;
+end;
+/
+
+create or replace function check_item
+(i_id in number)
+return number
+as
+i_cnt number;
+begin
+select count(*) into i_cnt from item_info where id=i_id;
+return i_cnt;
+end;
+/
+
+
+create or replace function nof_item
+return number
+as
+i_cnt number;
+begin
+select count(*) into i_cnt from item_info;
+return i_cnt;
+end;
+/
+
+                    

@@ -1,0 +1,587 @@
+import java.io.IOException;
+import java.io.FileReader;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+public class MiniProject
+{
+    public static void main(String... args) throws IOException,FileNotFoundException
+    {
+        BufferedReader fileReader=new BufferedReader(new FileReader("Visitor.txt"));       
+
+         //to read input
+        BufferedReader inputReader=new BufferedReader(new InputStreamReader(System.in));
+
+        int visitors[][][];           
+
+        //storing visitors details for one year (array indexes is month,days,hours)
+        visitors=new int[12][][];                                       
+        int days[]={31,29,31,30,31,30,31,31,30,31,30,31};
+        String mon[]={"January","February","March","April","May","June","July","August","September",
+                        "October","November","December"};
+        for(int i=0;i<days.length;i++)
+        {
+            visitors[i]=new int[days[i]][24];  
+
+             //declaring 3 dimensional array for separate months
+        }
+        for(int i=0;i<visitors.length;i++)
+        {
+            for(int j=0;j<visitors[i].length;j++)
+            {
+                for(int k=0;k<visitors[i][j].length;k++)
+                {
+                    visitors[i][j][k]=Integer.valueOf(fileReader.readLine());       
+
+                    //reading input from visitor.txt file
+                }
+            }
+        }
+        boolean terminate=true;
+        while(terminate)
+        {
+            
+            int sum=0;
+            int average=0;
+            System.out.println("\n\n1. VISITORS OF PARTICULAR MONTH.");
+            System.out.println("2. VISITORS OF PARTICULAR DATE IN EACH MONTH.");
+            System.out.println("3. VISITORS OF PARTICULAR TIME IN EACH MONTH.");
+            System.out.println("4. VISITORS BETWEEN MONTH BOUNDRIES.");
+            System.out.println("5. VISITORS BETWEEN MONTH AND DATE BOUNDRIES.");
+            System.out.println("6. VISITORS BETWEEN MONTH, DATE AND TIME BOUNDRIES.");
+            System.out.println("7. VISITORS IN MULTIPLE MONTH BOUNDRIES.");
+            System.out.println("8. VISITORS IN MULTIPLE DATE BOUNDRIES WITH FIXED MONTH BOUNDRIES.");
+            System.out.println("9. VISITORS IN MULTIPLE HOUR BOUNDRIES WITH FIXED MONTH, DATE BOUNDRIES.");
+            System.out.println("10.VISITORS IN ALL MULTIPLE BOUNDRIES.");
+            System.out.println("Press 0 to terminate :\n\t");
+            int pressed=Integer.valueOf(inputReader.readLine());
+            int startingMonth=0;
+            int endingMonth=0;
+            int startingDate=0;
+            int endingDate=0;
+            int startingHour=0;
+            int endingHour=0;
+            int count=0;
+            int choice=0;
+            switch(pressed)
+            {
+
+                case 0:
+                    terminate=false;
+                    break;
+                    
+                case 1:
+                    //calculating the sum and average of a single month
+                    //example january
+                    int month=0;
+                    System.out.println("Sum and Average of which month (Mention in numbers)  ?");
+                    month=Integer.parseInt(inputReader.readLine());
+                    month-=1;
+                    if(month>=0 && month<12)
+                    {
+                        for(int i=0;i<visitors[month].length;i++)
+                        {
+                            for(int j=0;j<visitors[month][j].length;j++)
+                            {
+                                sum+=visitors[month][i][j];
+                                count++;
+                            }
+                        }
+                    System.out.printf("\n\nSum : %d \nAverage : %d visitors / hour", 
+                        sum,sum/count);
+                    }
+                    else
+                    {
+                        System.out.println("Invalid Month Enter between 1-12");
+                    }
+                    break;
+
+                case 2:
+                     //calculating the sum and average of a single date of all the momths
+                     //9th of all the months in one year
+                     int date=0;
+                     System.out.println("Sum and Average of which date (for whole year) ");
+                     date=Integer.parseInt(inputReader.readLine());
+                     date-=1;
+                     if(date>=0 && date<=28)
+                     { 
+                         for(int i=0;i<visitors.length;i++)
+                         {
+                            for(int j=0;j<visitors[i][date].length;j++)
+                            {
+                                sum+=visitors[i][date][j];
+                                count++;
+                            }
+                         }
+                        System.out.printf("\n\nSum : %d \nAverage : %d visitors / hour", 
+                            sum,sum/count);
+                     }
+                     else if(date==29)
+                     {
+                         for(int i=0;i<visitors.length;i++)
+                         {
+                            if(i!=1)
+                            {
+                                for(int j=0;j<visitors[i][date].length;j++)
+                                {
+                                     sum+=visitors[i][date][j];
+                                     count++;
+                                }
+                            }
+                         }
+                         System.out.printf("Sum : %d \nAverage : %d visitors / hour", 
+                            sum,sum/count);
+                     }
+                     else if(date==30)
+                     {
+                        for(int i=0;i<visitors.length;i++)
+                         {
+                            if(i!=1 && days[i]==31)
+                            {
+                                count++;
+                                for(int j=0;j<visitors[i][date].length;j++)
+                                {
+                                     sum+=visitors[i][date][j];
+                                    count++;
+                                }
+                            }
+                         }
+                         System.out.printf("Sum : %d \nAverage : %d visitors / hour", 
+                            sum,sum/count);
+                     }
+                     else
+                     {
+                        System.out.println("Invalid date Enter between 1-31");
+                     }
+                    break;
+
+                case 3:
+                    //calculating the sum and average of a particular hour of all the days
+                    //9:00 AM of all the days for one year
+                    int hour=0;
+                    System.out.println("Enter the Specific hour visitors for whole year");
+                    hour=Integer.valueOf(inputReader.readLine());
+                    hour-=1;
+                    if(hour>=0 && hour<24)
+                    {
+                        for(int i=0;i<visitors.length;i++)
+                        {
+                            for(int j=0;j<visitors[i].length;j++)
+                            {
+                                sum+=visitors[i][j][hour];
+                                count++;
+                            }
+                        }
+                        System.out.printf("Sum : %d \nAverage : %d visitors / hour", 
+                            sum,sum/count);
+                    }
+                    else
+                    {
+                        System.out.println("Invalid date Enter between 1-24");
+                    }
+                    break;
+
+                case 4: 
+                    //calculating the sum and averages of the month between ranges
+                    //example sum and average from january to may(1-5)
+                    System.out.println("Enter starting boundary of month");
+                    startingMonth=Integer.parseInt(inputReader.readLine());
+                    System.out.println("Enter ending boundary of month");
+                    endingMonth=Integer.parseInt(inputReader.readLine());
+                    startingMonth-=1;
+                    endingMonth-=1;
+                    if(startingMonth>=0 && endingMonth<12 && endingMonth>=startingMonth)
+                    {
+                        for(int i=startingMonth;i<=endingMonth;i++)
+                        {
+                            for(int j=0;j<visitors[i].length;j++)
+                            {
+                                for(int k=0;k<visitors[i][j].length;k++)
+                                {
+                                    sum+=visitors[i][j][k];
+                                    count++;
+                                }
+                            }
+                        }
+                        System.out.printf("Sum : %d \nAverage : %d visitors / hour", 
+                            sum,sum/count);
+                    }
+                    else
+                    {
+                        System.out.println("Invalid range of boundaries");
+                    }   
+                    break;
+
+                case 5:   
+                    //calculating the sum and average of month between ranges with range of dates
+                    //january to march and date is 1-10                 
+                    System.out.println("Enter starting boundary of month");
+                    startingMonth=Integer.parseInt(inputReader.readLine());
+                    System.out.println("Enter ending boundary of month");
+                    endingMonth=Integer.parseInt(inputReader.readLine());
+                    System.out.println("Enter starting boundary of date for month between "
+                                        +mon[startingMonth-1]+" and "+mon[endingMonth-1]);
+                    startingDate=Integer.parseInt(inputReader.readLine());
+                    System.out.println("Enter ending boundary of date for month between "
+                                        +mon[startingMonth-1]+" and "+mon[endingMonth-1]);
+                    endingDate=Integer.parseInt(inputReader.readLine());
+                    if(startingMonth>=1 && endingMonth<=12 && endingMonth>=startingMonth
+                        && startingDate>=1 && endingDate<=31 && endingDate>=startingDate)
+                    {
+                        for(int i=startingMonth-1;i<endingMonth;i++)
+                        {
+                            if(days[i]>=endingDate)
+                            {
+                                
+                                for(int j=startingDate-1;j<endingDate;j++)
+                                {
+                                    for(int k=0;k<visitors[i][j].length;k++)
+                                    {
+                                        sum+=visitors[i][j][k];
+                                        count++;
+                                    }
+                                }
+                            }
+                        }
+                        System.out.printf("Sum : %d \nAverage : %d visitors / hour", 
+                        sum,sum/count);
+                    }
+                    else
+                    {
+                        System.out.println("Invalid boundaries");
+                    }
+                    break;
+
+                case 6:
+                    System.out.println("Enter starting boundary of month");
+                    startingMonth=Integer.parseInt(inputReader.readLine());
+                    System.out.println("Enter ending boundary of month");
+                    endingMonth=Integer.parseInt(inputReader.readLine());
+                    System.out.println("Enter starting boundary of date for month between "
+                                        +mon[startingMonth-1]+" and "+mon[endingMonth-1]);
+                    startingDate=Integer.parseInt(inputReader.readLine());
+                    System.out.println("Enter ending boundary of date for month between "
+                                        +mon[startingMonth-1]+" and "+mon[endingMonth-1]);
+                    endingDate=Integer.parseInt(inputReader.readLine());
+                    System.out.println("Enter starting hour in 24 hours format");
+                    startingHour=Integer.parseInt(inputReader.readLine());
+                    System.out.println("Enter ending hour in 24 hours format");
+                    endingHour=Integer.parseInt(inputReader.readLine());
+                    if(startingMonth>=1 && endingMonth<=12 && endingMonth>=startingMonth &&
+                        startingDate>=1 && endingDate<=31  && endingDate>=startingDate &&
+                        startingHour>=0 && endingHour<=24 && endingHour>=startingHour)
+                    {
+                        for(int i=startingMonth-1;i<endingMonth;i++)
+                        {
+                            if(days[i]>=endingDate)
+                            {
+                               
+                                for(int j=startingDate-1;j<endingDate;j++)
+                                {
+                                    for(int k=startingHour;k<endingHour;k++)
+                                    {
+                                        sum+=visitors[i][j][k];
+                                         count++;
+                                    }
+                                }
+                            }
+                        }
+                         System.out.printf("Sum : %d \nAverage : %d visitors / hour", 
+                        sum,sum/count);
+                    }
+                    else
+                    {
+                        System.out.println("Invalid boundaries");
+                    }
+                    break;
+
+                case 7:
+                    boolean case7Termination=true;
+                    while(case7Termination)
+                    {
+                        System.out.println("\nPress 0 to exit 1 to continue : \n");
+                        choice=Integer.parseInt(inputReader.readLine());
+                        if(choice==1)
+                        {
+                            System.out.println("Enter starting boundary of month");
+                            startingMonth=Integer.parseInt(inputReader.readLine());
+                            System.out.println("Enter ending boundary of month");
+                            endingMonth=Integer.parseInt(inputReader.readLine());
+                            startingMonth-=1;
+                            endingMonth-=1;
+                            if(startingMonth>=0 && endingMonth<12 && endingMonth>=startingMonth)
+                            {
+                                for(int i=startingMonth;i<=endingMonth;i++)
+                                {
+                                    for(int j=0;j<visitors[i].length;j++)
+                                    {
+                                        for(int k=0;k<visitors[i][j].length;k++)
+                                        {
+                                            sum+=visitors[i][j][k];
+                                            count++;
+                                        }
+                                    }
+                                }
+                                System.out.printf("Sum : %d \nAverage : %d visitors / hour", 
+                                    sum,sum/count);
+                            }
+                            else
+                            {
+                                System.out.println("Invalid range of boundaries");
+                            } 
+                        }
+                        else if(choice==0)
+                        {
+                            case7Termination=false;
+                        } 
+                        else
+                        {
+                            System.out.println("Invalid choice");
+                        } 
+                    }
+                    break;
+
+                case 8:
+                    boolean case8Termination = true;
+                    System.out.println("\nEnter fixed Month Boundaries : \n");
+                    System.out.println("Enter starting boundary of month");
+                    startingMonth=Integer.parseInt(inputReader.readLine());
+                    System.out.println("Enter ending boundary of month");
+                    endingMonth=Integer.parseInt(inputReader.readLine());
+                    if(startingMonth>=1 && endingMonth<=12 && endingMonth>=startingMonth)
+                    {
+                        while(case8Termination)
+                        {   
+                            System.out.println("\nPress 0 to exit 1 to continue : \n");
+                            choice=Integer.parseInt(inputReader.readLine());
+                            if(choice==1)
+                            {
+                                System.out.println("Enter starting boundary of date for month between "
+                                        +mon[startingMonth-1]+" and "+mon[endingMonth-1]);
+                                startingDate=Integer.parseInt(inputReader.readLine());
+                                System.out.println("Enter ending boundary of date for month between "
+                                        +mon[startingMonth-1]+" and "+mon[endingMonth-1]);
+                                endingDate=Integer.parseInt(inputReader.readLine());
+                                if(startingDate>=1  &&  endingDate<=31 && endingDate>=startingDate)
+                                {
+                                    for(int i=startingMonth-1;i<endingMonth;i++)
+                                    {
+                                        if(days[i]>=endingDate)
+                                        {
+                                            for(int j=startingDate-1;j<endingDate;j++)
+                                            {
+                                                for(int k=0;k<visitors[i][j].length;k++)
+                                                {
+                                                    sum+=visitors[i][j][k];
+                                                    count++;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    System.out.printf("Sum : %d \nAverage : %d visitors / hour", 
+                                    sum,sum/count);
+                                }
+                                else
+                                {
+                                    System.out.println("Invalid date boundaries");
+                                }
+                            }
+                            else if(choice==0)
+                            {
+                                case8Termination=false;
+                            }
+                            else
+                            {
+                                System.out.println("Invalid choice");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        System.out.println("Invalid Month Boundaries");
+                    }    
+                    break;
+
+                case 9:
+                    boolean case9Termination = true;
+                    System.out.println("\nEnter fixed Month Boundaries");
+                    System.out.println("Enter starting boundary of month");
+                    startingMonth=Integer.parseInt(inputReader.readLine());
+                    System.out.println("Enter ending boundary of month");
+                    endingMonth=Integer.parseInt(inputReader.readLine());
+                    if(startingMonth>=1 && endingMonth<=12 && endingMonth>=startingMonth)
+                    {
+                        System.out.println("\nEnter fixed Date Boundaries : \n");
+                        System.out.println("Enter starting boundary of date");
+                        startingDate=Integer.parseInt(inputReader.readLine());
+                        System.out.println("Enter ending boundary of date");
+                        endingDate=Integer.parseInt(inputReader.readLine());
+                        if(startingDate>=1  &&  endingDate<=31 && endingDate>=startingDate)
+                        {
+                            while(case9Termination)
+                            {  
+                                System.out.println("\nPress 0 to exit 1 to continue : \n");
+                                choice=Integer.parseInt(inputReader.readLine());
+                                if(choice==1)
+                                {
+                                    System.out.println("Enter starting hour in 24 hours format");
+                                    startingHour=Integer.parseInt(inputReader.readLine());
+                                    System.out.println("Enter ending hour in 24 hours format");
+                                    endingHour=Integer.parseInt(inputReader.readLine());
+                                    if(startingHour>=1 && endingHour<=24 && endingHour>=startingHour)
+                                    {
+                                         for(int i=startingMonth-1;i<endingMonth;i++)
+                                         {
+                                            if(days[i]>=endingDate)
+                                            {
+                                                for(int j=startingDate-1;j<endingDate;j++)
+                                                {
+                                                    for(int k=startingHour-1;k<endingHour;k++)
+                                                    {
+                                                        sum+=visitors[i][j][k];
+                                                        count++;
+                                                    }
+                                                }
+                                            }
+                                         }   
+                                        System.out.printf("Sum : %d \nAverage : %d visitors / hour", 
+                                            sum,sum/count);
+                                    }
+                                   else
+                                   {
+                                        System.out.println("Invalid Hour range");
+                                   }
+                                }    
+                                else if(choice==0)
+                                {
+                                    case9Termination=false;
+                                }
+                                else
+                                {
+                                    System.out.println("Invalid choice");
+                                }
+                            }
+                        }
+                        else
+                        {
+                             System.out.println("Invalid Date Boundaries");
+                        } 
+                    }                               
+                    else
+                    {
+                        System.out.println("Invalid Month Boundaries");
+                    }
+                    break;
+
+                case 10:
+                    boolean case10Termination=true;
+                    boolean case10Termination1=true;
+                    boolean case10Termination2=true;
+                    while(case10Termination)
+                    {
+                        System.out.println("\nPress 0 to terminate or 1 to continue");
+                        choice=Integer.valueOf(inputReader.readLine());
+                        if(choice==0)
+                        {
+                            case10Termination=false;
+                        }
+                        else if(choice==1)
+                        {
+                            System.out.println("Enter starting boundary of month");
+                            startingMonth=Integer.parseInt(inputReader.readLine());
+                            System.out.println("Enter ending boundary of month");
+                            endingMonth=Integer.parseInt(inputReader.readLine());   
+                            if(startingMonth>=1 && endingMonth<=12 && endingMonth>=startingMonth)
+                            {
+                                while(case10Termination1)
+                                {
+                                    System.out.println("\nPress 0 to terminate or 1 to continue");
+                                    choice=Integer.valueOf(inputReader.readLine());
+                                    if(choice==0)
+                                    {
+                                        case10Termination1=false;
+                                    }
+                                    else if(choice==1)
+                                    {
+                                             System.out.println("Enter starting boundary of date for month between "
+                                                     +mon[startingMonth-1]+" and "+mon[endingMonth-1]);
+                                            startingDate=Integer.parseInt(inputReader.readLine());
+                                            System.out.println("Enter ending boundary of date for month between "
+                                                    +mon[startingMonth-1]+" and "+mon[endingMonth-1]);
+                                            endingDate=Integer.parseInt(inputReader.readLine());
+                                            if(startingDate>=1  &&  endingDate<=31 && endingDate>=startingDate)
+                                            {
+                                                    while(case10Termination2)
+                                                    {
+                                                        System.out.println("\nPress 0 to terminate or 1 to continue");
+                                                        choice=Integer.valueOf(inputReader.readLine());
+                                                        if(choice==0)
+                                                        {
+                                                            case10Termination2=false;
+                                                        }
+                                                        else if(choice==1)
+                                                        {
+                                                                System.out.println("Enter starting hour in 24 hours format(1-24)");
+                                                                startingHour=Integer.parseInt(inputReader.readLine());
+                                                                System.out.println("Enter ending hour in 24 hours format(1-24)");
+                                                                endingHour=Integer.parseInt(inputReader.readLine());
+                                                                if(startingHour>=1 && endingHour<=24 && endingHour>=startingHour)
+                                                                {
+                                                                    for(int i=startingMonth-1;i<endingMonth;i++)
+                                                                     {
+                                                                        if(days[i]>=endingDate)
+                                                                        {
+                                                                            for(int j=startingDate-1;j<endingDate;j++)
+                                                                            {
+                                                                                for(int k=startingHour-1;k<endingHour;k++)
+                                                                                {
+                                                                                    sum+=visitors[i][j][k];
+                                                                                    count++;
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    System.out.printf("Sum : %d \nAverage : %d visitors / hour", 
+                                                                        sum,sum/count);
+                                                                }
+                                                                else
+                                                                {
+                                                                    System.out.println("Invalid Hour boundaries");
+                                                                }
+                                                        }
+                                                        else
+                                                        {
+                                                            System.out.println("Invalid input press 0 / 1  correctly");
+                                                        }
+                                                    }
+                                            }
+                                            else
+                                            {
+                                                System.out.println("Invalid Date boundaries");
+                                            }
+                                    }
+                                    else
+                                    {
+                                         System.out.println("Invalid input press 0 / 1  correctly");
+                                    }
+                                }
+                            } 
+                            else
+                            {
+                                System.out.println("Invalid Month Boundaries");
+                            }                
+                        }
+                        else
+                        {
+                            System.out.println("Invalid input press 0 / 1  correctly");
+                        }
+                    }
+                    break;
+
+                default:
+                    System.out.println("Invalid Input");
+                    break;
+            }
+        }
+    }
+}

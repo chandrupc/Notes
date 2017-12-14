@@ -1,0 +1,37 @@
+            java.util
+
+Framework - It Accepts only an object
+
+group of objects
+
+Data Manipulation
+
+    1. Insert
+    2. Update
+    3. Delete
+    4. Search
+    5. Traverse
+
+for primitive type values have wrapper classes
+
+int             Integer
+
+
+    1. Autoboxing
+    3. Unboxing
+
+
+int size()
+boolean isEmpty()
+void clear()
+Iterator iterator()
+Object[] toArray()
+Object[] toArray(Object elements[])
+boolean add(Object element)
+boolean addAll(Collection elements)
+boolean contains(Object element)
+boolean containsAll(Collection elements)
+boolean remove(Object element)
+boolean removeAll(Collection elements)
+boolean retainAll(Collection elements)
+boolean equals(Object another)                    

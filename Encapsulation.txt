@@ -1,0 +1,77 @@
+            Data Hiding
+Binding both static and dynamic
+
+To achive encapsulation:
+    1. make all member as private
+    2. provide pubic method to update and get value of data member
+        (i.e getter and setter)
+
+Bean is a fully encapsulation
+
+Getter and Setter for fieldName
+
+Setter:
+-------
+
+    public void setFieldName(<datatype> fieldName) {
+        this.fieldName = fieldName;
+    }
+
+Getter:
+-------
+
+    public <datatype> getFieldName() {
+        return this.fieldName;
+    }
+
+    public boolean isFieldName() {
+        return this.fieldName;
+    }
+
+Ex:
+---
+private String firstName;
+private String lastName;
+private boolean gender;
+private double basicSalary;
+private float houseRentAllowance;
+
+
+Getters:
+--------
+public String getFirstName() {
+    return this.firstName;
+}
+public String getLastName() {
+    return this.lastName;
+}
+public boolean isGender() {
+    return this.gender;
+}
+public double getBasicSalary() {
+    return this.basicSalary;
+}
+public float getHouseRentAllowance() {
+    return this.houseRentAllowance;
+}
+
+
+
+Setters:
+--------
+public void setFirstName(String firstName) {
+    this.firstName = firstName;
+}
+public void setLastName(String lastName) {
+    this.lastName = lastName;
+}
+public void setGender(boolean gender) {
+    this.gender = gender;
+}
+public void setBasicSalary(double basicSalary) {
+    this.basicSalary = basicSalary;
+}
+public void setHouseRentAllowance(float houseRentAllowance) {
+    this.houseRentAllowance = houseRentAllowance;
+}
+                    

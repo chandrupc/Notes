@@ -1,0 +1,121 @@
+            Class Syntax:
+------------
+
+[modifier] class <ClassName> {
+    // Data Members both static and instance
+    // Constructors
+    // Static Block
+    // Member Function
+    // Methods
+}[;]
+
+
+
+Data Member Syntax:
+-------------------
+
+[modifier] datatype <memberName> [= value];
+
+
+
+Method & Member Function:
+-------------------------
+
+[modifier] returntype <methodName>([datatype <argument1>, .....]) {
+    // Statment to be executed
+    [return <value>];
+}
+
+
+Constructors
+------------
+
+public <ClassName>([datatype <argument1>, .....]) {
+    // Init Process
+}
+
+
+Static Block:
+-------------
+
+static {
+    // Statements
+}
+
+
+
+                                    OBJECT
+                                    ------
+
+Declaration:
+-----------
+                <ClassName> <objectName> [= null];
+
+Instantiation:
+-------------
+                <objectName> = new <Constructor>([argument1, argument2, .......]);
+
+
+                        (or)
+
+    <ClassName> <objectName> = new <Constructor>([argument1, argument2, .......]);
+
+
+Accessing Member & Methods:
+--------------------------
+
+        <objectName>.<memberName> [= value];
+        <objectName>.<methodName>([argument1, argument2, ....]);
+        datatype <varible> = <objectName>.<methodName>([argument1, argument2, ....]);
+
+
+
+
+
+
+
+
+
+
+
+Class Diagram Representation:
+----------------------------
+
+                --------------------------
+                |       ClassName        |
+                --------------------------
+                | Data Members           |
+                |                        |
+                --------------------------
+                | Constructors           |
+                | Member Function        |
+                | Methods                |
+                |                        |
+                --------------------------
+
+
+    modifiers:
+                +           public
+                -           private
+                #           protected
+                ~ or blank  default
+
+    datamember:
+                [symbol] <memberName> : datatype [= value]
+    
+    method:
+                [symbol] <methodName>([<argument1> : datatype, ..........]) : returntype
+
+    Constructors:
+                [symbol] <ClassName>([<argument1> : datatype, ..........])
+
+
+
+    Static Member:
+                [symbol] <memberName> : datatype [= value]
+                ------------------------------------------
+    
+    Final Member:
+                [symbol] <MEMBER_NAME> : datatype = value
+
+                    

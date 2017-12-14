@@ -1,0 +1,51 @@
+            HashMap<Object, Object> map = new HashMap<Object, Object>();
+
+TreeMap<Object, Object> map = new TreeMap<Object, Object>();
+
+Map<Object, Object> map = new HashMap<Object, Object>();
+
+Map<Object, Object> map = new TreeMap<Object, Object>();
+
+"name": "Steve"
+"age": "45"
+"kce": "Karpagam College of Engineering"
+"kit": "Karpagam Institute of Technology"
+"ku": "Karpagam University"
+
+Object get(Object key)
+Object put(Object key, Object value)
+Object remove(Object key)
+void putAll(Map map)
+boolean containsKey(Object key)
+boolean containsValue(Object value)
+Set keySet()
+Collection values()
+boolean equals(Map another)
+Set entrySet()
+
+Enhaced For Loop:
+    for(Map.Entry<Object,Object> each:map.entrySet()) {
+        // each.getKey()
+        // each.getValue()
+    }
+
+Looping & Iterator
+    Iterator<Map.Entry<Object, Object>> iterator = map.entrySet().iterator();
+    while(iterator.hasNext()) {
+        Map.Entry<Object, Object> each = iterator.next();
+        // each.getKey()
+        // each.getValue()
+    }
+
+HashMap - Accepts Single null key & multiple null values
+
+TreeMap - No null key but accepts null value
+
+Hashtable - No null key or value
+
+1. Add Rating
+2. View All 
+1
+    movieName
+    rating
+yes/no                    

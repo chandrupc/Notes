@@ -1,0 +1,32 @@
+            Naming Convention
+    Class Name - Camel Case
+    Field name - first word small, remaining words Camel Case
+    Method Name - same as field Name with arguments
+    Constant - Upper Case, underscore(_) as a word seperator
+    Package Name - Lower Case
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    EmployeeSalaryInformation   -   Class Name
+    firstName   -   Field Name
+    lastName    -   Field Name
+    calculateNetPayment()   -   Method Name
+    MAX_RANGE, PI           -   Constant
+    com.google.drive        -   Package
+    com.google.mail         -   Package
+                    

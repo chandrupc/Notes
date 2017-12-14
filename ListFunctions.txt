@@ -1,0 +1,48 @@
+            ArrayList<ElementType> listName = new ArrayList<ElementType>();
+                    
+LinkedList<ElementType> listName = new LinkedList<ElementType>();
+                    (or)
+
+List<ElementType> listName = new ?();
+
+
+Ex.:
+
+ArrayList<Address> listName = new ArrayList<Address>();
+                    
+LinkedList<Address> listName = new LinkedList<Address>();
+
+List<Address> listName = new LinkedList<Address>();
+                (or)
+List<Address> listName = new ArrayList<Address>();
+
+
+List<Object> subList(int startIndex, int endIndex)
+void sort(Comparator comparator)
+Object get(int index)
+Object set(int index, Object element)
+void add(int index, Object element)
+void addAll(int index, Collection elements)
+Object remove(int index)
+int indexOf(Object element)
+int lastIndexOf(Object element)
+
+Enhanced for loop:
+-----------------
+
+for(Object each:list) {
+    // each
+}
+
+Iterator:
+---------
+
+Iterator<Object> iterator = list.iterator();
+while(iterator.hasNext()) {
+    Object each = iterator.next();
+    // each
+}
+
+
+boolean hasNext();
+Object next();                    

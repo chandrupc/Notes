@@ -1,0 +1,52 @@
+            It's Immutable - We can't do updation
+Create
+    By literals
+    By Object - new keyword
+String name = "Steve";
+String name = new String("Steve Jobs"); // ""
+String name = new String({'S', 't', 'e', 'v', 'e'});
+String name = new String({65, 66, 67, 68, 69});
+String another = new String(name);
+String another = name;
+Constructor
+    String()
+    String(CharSequence sequence)
+    String(char[] charArray)
+    String(byte[] byteArray)
+    String(String another)
+
+
+char charAt(int index)
+char[] toCharArray()
+int length()
+static String format(String format, Object... args)
+String substring(int beginIndex)
+String substring(int beginIndex, int endIndex)
+boolean contains(CharSequence s)
+boolean equals(Object another)
+boolean equalsIgnoreCase(Object another)
+boolean isEmpty()
+String concat(String str) // +
+String replace(char old, char new)
+String replace(CharSequence old, CharSequence new)
+String replaceAll(String regex, CharSequence new)
+String trim()
+String[] split(String regex)
+int indexOf(int ch)
+int indexOf(int ch, int fromIndex)
+int indexOf(String substring)
+int indexOf(String substring, int fromIndex)
+String toLowerCase()
+String toUpperCase()
+boolean startsWith(String another)
+boolean endsWith(String another)
+int lastIndexOf(int ch)
+int lastIndexOf(int ch, int toIndex)
+int lastIndexOf(String substring)
+int lastIndexOf(String substring, int toIndex)
+int compareTo(String another)
+int compareToIgnoreCase(String another)
+
+String name = "Steve";
+String another = "steve";
+                    

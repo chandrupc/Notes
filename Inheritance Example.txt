@@ -1,0 +1,69 @@
+            -----------------------------
+            Shape
+-----------------------------
+- color : String = "YELLOW"
+- filled : boolean = false
+-----------------------------
++ Shape()
++ Shape(color:String, filled: boolean)
+// Getters and Setters
++ toString() : String
+-----------------------------
+
+
+-----------------------------
+            Circle
+-----------------------------
+- radius : double = 1.0
+- PI : double = 3.14
+-----------------------------
++ Circle()
++ Circle(radius:double)
+// Getters and Setters for radius
+// Getter for PI
++ area() : double
++ toString() : String
+-----------------------------
+
+-----------------------------
+        Cylinder
+-----------------------------
+- height : double = 1.0
+-----------------------------
++ Cylinder()
++ Cylinder(height:double)
+// Getters and Setters for height
++ area() : double
++ toString() : String
+-----------------------------
+
+
+
+-----------------------------
+        Rectangle
+-----------------------------
+- length : double = 1.0
+- breadth : double = 1.0
+-----------------------------
++ Rectangle()
++ Rectangle(length:double, breadth:double)
++ area() : double
++ toString() : String
+// Getters and Setters
+-----------------------------
+
+
+-----------------------------
+        Triangle
+-----------------------------
+- base : double = 1.0
+- height : double = 1.0
+- HALF : double = 0.5
+-----------------------------
++ Triangle()
++ Triangle(base:double, height:double)
++ area() : double
++ toString() : String
+// Getters and Setters
+// Getter for HALF
+-----------------------------                    

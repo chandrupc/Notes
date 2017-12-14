@@ -1,0 +1,12 @@
+            Enhanced for
+
+for(<ObjectType> <objectName>:<collectionName>) {
+    // use objectName here
+}
+
+break & continue
+
+while(true) {
+    if(true)
+        break or continue;
+}                    

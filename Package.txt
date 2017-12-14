@@ -1,0 +1,55 @@
+            package packagename[.subpackagename[.subpackagename[.subpackagename[........]]]];
+
+Compile:
+    javac -d <destination directory> [-cp <classpathlocation>;] FileName.java 
+        where,
+        -cp or -classpath
+            destination directory
+                    .               takes current directory
+                    ../ or ..\      takes parent directory
+                    name            takes child directory
+
+            file seperator
+                    \       -   windows
+                    /       -   Linux, Mac
+            path seperator
+                    ;       -   windows
+                    :       -   Linux, Mac
+Import:
+    import <packagename>.<ClassName>;
+
+
+Run:
+    java [-cp <classpathlocation>;] <packagename>.<ClassName>
+
+
+
+
+
+
+
+
+Compress Jar File as Library:
+    jar -cvf <filename>.jar [<classes>] [<packges>]
+
+Extract Jar:
+    jar -xvf <filename>.jar
+
+
+
+
+
+
+
+
+Jar Creation with main class:
+    Compile all the classes
+    create manifest.txt with the following content with in 3 lines
+        Main-Class: <packagename>.<ClassName>
+    jar -cvfm <filename>.jar manifest.txt [<classes>] [<packges>]
+
+Run Jar File:
+
+    java -jar <filename>.jar [command line arguments]
+
+                    

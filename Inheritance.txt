@@ -1,0 +1,78 @@
+            Inheritance -> is-a relationship
+
+Down Casting
+
+    Ex:
+        Circle is-a Shape
+        Cylinder is-a Cirlce
+        Rectangle is-a Shape
+        Triangle is-a Shape
+        Principle is-a Employee
+        HOD is-a Employee
+        Lab Assist is-a Employee
+        SavingsAccount is-a BankAccount
+        CurrentAccount is-a BankAccount
+        FixedDeposit is-a BankAccount
+        LoanAccount is-a BankAccount
+
+TERMS:
+------------
+Base, Derived
+Old, New
+Super, Sub
+
+
+KEYWORDS:
+------------
+extends
+implements
+
+super, final
+
+
+
+TYPES:
+------------
+Sinlge
+Multiple
+Multilevel
+Heirarchial
+Hybrid
+
+
+Extending Class:
+---------------
+
+[modified] class <DerivedClassName> extends <BaseClassName> {
+    // Instance Member
+    // Static Member
+    // Static Context
+    // Constructor
+    // Method & Overrided methods
+}[;]
+
+Implements Interface:
+--------------------
+
+[modifier] class <DerivedClassName> implements <BaseInterface>,......... {
+    // Instance Member
+    // Static Member
+    // Static Context
+    // Constructor
+    // Method & Overrided methods & Unimplemented Methods
+}[;]
+
+
+Super Keyword:
+--------------
+super.memberName                                    Access a super class member(both overrided and normal)
+[datatype value = ]super.methodName([arguments])    Access a super class method(both overrided and normal)
+super([arguments])                                  Super Class Contsructor
+
+
+Final Keyword:
+--------------
+member  - act as constant
+method  - cannnot override base class methods
+class - Cannot inherit base class
+                    

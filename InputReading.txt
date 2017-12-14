@@ -1,0 +1,33 @@
+            import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+
+import java.io.*;
+
+throws IOException
+
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+public String readLine();
+
+<datatype> valueOf(String value)
+Wrapper Class
+byte        Byte.valueOf(String value)
+short       Short.valueOf(String value) 
+int         Integer.valueOf(String value) 
+long        Long.valueOf(String value) 
+float       Float.valueOf(String value) 
+double      Double.valueOf(String value) 
+char        Character
+boolean     Boolean.valueOf(String value) 
+
+            (or)
+
+byte        Byte.parseByte(String value)
+short       Short.parseShort(String value) 
+int         Integer.parseInt(String value) 
+long        Long.parseLong(String value) 
+float       Float.parseFloat(String value) 
+double      Double.parseDouble(String value) 
+char        Character
+boolean     Boolean.parseBoolean(String value) 
+                    

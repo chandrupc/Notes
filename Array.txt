@@ -1,0 +1,31 @@
+                    1D Array
+        -------
+
+datatype <arrayName>[]                // Declaration
+<arrayName> = new datatype[size]      // Instantiation
+<arrayName>[index] [ = value]         // Value Access or Initialization
+
+
+datatype <arrayName>[] = new datatype[size]      // Declaration & Instantiation
+
+datatype <arrayName>[] = { set of values };
+
+
+
+        2D Array
+        -------
+
+datatype <arrayName>[][]                // Declaration
+    <arrayName> = new datatype[rowsize][colsize]      // Instantiation
+        or
+    <arrayName> = new datatype[rowsize][]
+        <arrayName>[rowIndex] = new datatype[colsize]
+
+
+<arrayName>[rowIndex][columnIndex] [ = value]            // Value Access or Initialization
+
+
+datatype <arrayName>[][] = new datatype[rowsize][colsize]      // Declaration & Instantiation
+
+datatype <arrayName>[][] = { {set of values}, {set of values},...... };
+                    

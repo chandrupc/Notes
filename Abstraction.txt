@@ -1,0 +1,38 @@
+  Implementation Hiding
+    1. abstract class   - 0 .. 100
+    2. interface    - 100
+
+Not allowing to create object
+
+
+Abstract Class:
+---------------
+
+[modifier] abstract class <ClassName> {
+    // Abstract Methods
+    // Data Members both static and instance
+    // Constructors
+    // Static Block
+    // Member Function
+    // Methods
+}
+
+Abstract Method:
+---------------
+[public/default] abstract returntype methodName([arguments]); 
+
+
+Interface:
+----------
+
+[modifier] interface <InterfaceName> {
+    // Final Member
+    // Abstract Method
+}
+
+
+class to class -> extends
+interface to class -> implements 
+interface to interface -> extends
+
+                    

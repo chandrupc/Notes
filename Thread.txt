@@ -1,0 +1,55 @@
+            java.lang package
+
+By Using
+    Thread   - Class        - Extend(run)
+    Runnable - Interface    - Implement (run)
+
+State:
+    New
+    Ready
+    Run
+    Waiting
+    Terminate
+
+
+public static Thread currentThread();
+output:
+-------
+    Thread[main, 5, main]
+
+public static void sleep(long millisec) throws InterruptedException;
+public static void sleep(long millisec, int nanosec) throws InterruptedException;
+public String getName();
+public void setName(String name);
+        Priority - (1 - 10)
+            Thread.NORM_PRIORITY = 5
+            Thread.MIN_PRIORITY = 1
+            Thread.MAX_PRIORITY = 10
+public void setPriority(int priority);
+public int getPriority();
+public String getState();
+
+public void suspend();
+public void resume();
+public boolean isAlive();
+public void join();
+public void join(long millisec);
+public void join(long millisec, int nanosec);
+public boolean isInterrupted();
+public void interrupt();
+public void wait();
+public void wait(long millisec);
+public void wait(long millisec, int nanosec);
+public void notify();
+public void notifyAll();
+
+public void run();
+public void start();
+
+Creating thread in Runnable:
+----------------------------
+    Thread <threadName> = new Thread(Name, objectName);
+
+Creating thread in Thread Class:
+--------------------------------
+    super(Name, objectName);                    
