@@ -1,0 +1,15 @@
+FileWriter writer = new FileWriter("sample.txt");
+		writer.write("helllo how are you");
+		writer.close();
+
+
+This cannot append the content in file it always overwrites the new content
+
+BufferedWriter writer = new BufferedWriter(new FileWriter("sample.txt"));
+		writer.write("My name is chandru");
+		writer.write("I am studying in karpagam college of engineering");
+		writer.close();
+
+This append the content in the file 
+
+If the FileWriter("sample.txt",true) is setted the values of the appending is setted as true by default it is true
