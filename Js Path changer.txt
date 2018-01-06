@@ -1,0 +1,10 @@
+
+
+JS PATH CHANGER:
+-----------------
+
+location.href = "reference path"	-- 	refers to the path mentioned 
+
+
+
+

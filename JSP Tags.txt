@@ -1,4 +1,8 @@
-            <% %>   - Scriptlet
+JSP TAGS:
+---------
+
+
+<% %>   - Scriptlet
 <%= %>  - Expression
 <%! %>  - Declaration
 <%@ page import="?">

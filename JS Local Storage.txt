@@ -1,0 +1,8 @@
+LOCAL STORAGE:
+---------------
+
+localStorage.getItem("key-name");
+
+localStorage.setItem("key-name","value");
+
+value - json, text-content etc...

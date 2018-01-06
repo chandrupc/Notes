@@ -1,0 +1,45 @@
+SET TIMEOUT:
+------------
+
+executes only once and can be made recursively working by a recursion function call
+
+
+SYNTAX:
+-------
+	
+	setTimeout([function name],[continuous execution time in milliseconds]);
+
+
+CLEAR TIMEOUT:
+----------------
+
+when this is called the recursive call gets breaked
+
+
+SYNTAX:
+--------
+	
+	clearTimeout([function name]);
+
+
+
+
+
+
+
+
+
+SET INTERVAL:
+-------------
+
+
+this event executes automatically and no recursive call is required. This can also be cleared by clearTimeout event.
+
+
+
+
+SYNTAX:
+-------
+
+
+	setInterval([function name],[time in milliseconds]);

@@ -1,0 +1,13 @@
+PROTOTYPE :
+-----------
+
+extra property added to function / model classes
+
+
+
+APPLY :
+------
+
+inheritance concept.
+
+All properties added 'n' no of obj can be merged

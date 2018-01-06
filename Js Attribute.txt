@@ -1,0 +1,6 @@
+JS ATTRIBUTES:
+--------------
+
+	document.getElementById([idname]).getAttribute([attribute name  -- type, name..]);
+
+	document.getElementById([idname]).setAttribute([attribute name  -- type, name..],[value -- text,hidden,disabled..]);	

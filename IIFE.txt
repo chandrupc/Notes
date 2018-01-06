@@ -1,0 +1,8 @@
+	
+IMMEDIATE INVOKE FUNCTION EXPRESSION : 	(IIFE)
+--------------------------------------
+
+
+(function(){
+	//content goes here
+})();

@@ -1,0 +1,63 @@
+AJAX DIFFERENT STATUS:
+----------------------
+
+0   -   Request not initialised
+ 
+1   -   Server connection not established
+
+2   -   Request received
+
+3   -   Processing
+
+4   -   Finished [may be error/success]
+
+
+
+DECLARING AN AJAX REQUEST:
+--------------------------
+	
+	var ajax;
+	
+	if(XMLHttpRequest) {			-- if browser supports ajax request(usualy chrome,mozilla, IE > 7)
+		
+		ajax = new XMLHttpRequest();
+	} else{
+	
+		ajax = new ActiveXobject("Microsoft.XMLHTTP");
+	}
+
+
+OPENING AJAX REQUEST :
+-----------------------
+
+	ajax.open([get/post method],[/url from current directory]);
+
+
+CHECKING STATUS:
+-----------------
+
+	ajax.onreadystatechange = function(){
+	
+		if(this.readyState === 4 && this.status === 200){		
+				
+				//content goes here
+		}
+	}
+
+	
+
+SENDING AJAX REQUEST:
+---------------------
+	
+	By GET method:
+	   ---            
+	
+		ajax.send();
+
+	
+	By POST method:
+	   ----           
+	
+		ajax.send("user : "+user+"& password :"+password);
+
+		

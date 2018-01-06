@@ -1,0 +1,66 @@
+CONSOLE OUTPUT:
+--------------
+
+console.log("your text here");
+
+
+
+
+
+TYPE CHANGER:
+-------------
+
+parserInt(15.55)		-- 15
+parseFloat(10.00)		-- 10.00
+
+
+
+
+
+EQUALS:
+------
+
+In javascript there are two equal operator checkers
+
+==   &    ===
+
+Both are different === check for all the conditions
+where == is partial checker
+
+
+
+CONSTANT VARIABLE:
+------------------
+
+const PI = 3.14			-- constant variable
+
+
+
+
+LOCAL AND GLOBAL VARIABLES :
+-----------------------------
+
+
+var   --- global variable
+let   --- local  variable
+
+
+
+FUNCTION CALL :
+----------------
+
+we can also call the function as		
+		 [function name].call(this)
+
+
+
+
+
+
+
+
+
+
+
+
+
