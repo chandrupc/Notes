@@ -58,6 +58,7 @@ SENDING AJAX REQUEST:
 	By POST method:
 	   ----           
 	
-		ajax.send("user : "+user+"& password :"+password);
 
-		
+		ajax.open([method-name],[url]);
+		ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		ajax.send();
