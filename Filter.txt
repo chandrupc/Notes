@@ -1,0 +1,8 @@
+<filter>  
+  <filter-name>[User defined Name]</filter-name>  
+  <filter-class>[Java Class Name]</filter-class>  
+  </filter>  
+  <filter-mapping>  
+  <filter-name>[User defined Name]</filter-name>  
+  <url-pattern>[Servlet Redirecting Name]</url-pattern>  
+  </filter-mapping>  

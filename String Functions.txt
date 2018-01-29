@@ -49,4 +49,15 @@ int compareToIgnoreCase(String another)
 
 String name = "Steve";
 String another = "steve";
-                    
+
+
+
+
+
+Character.isUpperCase(input)   //Returns true or false
+Character.isLowerCase(input)   //Returns true or false
+
+
+
+Character.toUpperCase([input]);  //converts a character to uppercase
+Character.toLowerCase([input]);  //converts a character to lowercase                    
