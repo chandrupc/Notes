@@ -1,0 +1,4 @@
+@SuppressWarnings("deprecation")
+Date dateOfBirth = new Date(Integer.parseInt(date[0].substring(2)), Integer.parseInt(date[1]) - 1,
+	Integer.parseInt(date[2]));
+System.out.println(dateOfBirth);
